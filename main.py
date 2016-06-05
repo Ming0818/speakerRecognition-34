@@ -13,7 +13,7 @@ types = {
 }
 
 T = 0.15 # 150 ms
-SampleRate = 44100
+SampleRate = 12500
 N = int(SampleRate * T)
 
 
@@ -135,7 +135,8 @@ def predict_wav(name, cls, cls2):
 
 
 def validate(cls, cls2):
-    test_list = ["SashaTest.wav", "TaniaTest.wav", "ZheniaTest.wav", "Zhenia2Test.wav", "Tania2Test.wav", "DashaTest.wav", "Sasha2Test.wav", "VikaTest.wav", "MaxTest.wav", "PashaTest.wav"]
+    test_list = ["comp.speech/test/s1.wav", "comp.speech/test/s2.wav", "comp.speech/test/s3.wav", "comp.speech/test/s4.wav",
+                 "comp.speech/test/s5.wav", "comp.speech/test/s6.wav", "comp.speech/test/s7.wav", "comp.speech/test/s8.wav"]
 
     indexes = []
     b = []
@@ -149,7 +150,9 @@ def validate(cls, cls2):
 
 def trainModel():
     sss = []
-    train_list = [["SashaTrain.wav", 0], ["TaniaTrain.wav", 1], ["ZheniaTrain.wav", 2], ["Zhenia2Train.wav", 3], ["Tania2Train.wav", 4], ["DashaTrain.wav", 5], ["Sasha2Train.wav", 6], ["VikaTrain.wav", 7], ["MaxTrain.wav", 8], ["PashaTrain.wav", 9]]
+    train_list = [["comp.speech/train/s1.wav", 0], ["comp.speech/train/s2.wav", 1], ["comp.speech/train/s3.wav", 2],
+                  ["comp.speech/train/s4.wav", 3], ["comp.speech/train/s5.wav", 4], ["comp.speech/train/s6.wav", 5],
+                  ["comp.speech/train/s7.wav", 6], ["comp.speech/train/s8.wav", 7]]
 
     for wav_name in train_list:
         add_wav_to_db(wav_name[0], wav_name[1], sss)
